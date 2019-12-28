@@ -4,3 +4,4 @@
 	* AI For Everyone
 	* Cluster Analysis in Data Mining
 	* How Google does Machine Learning
+	* Neural Networks and Deep Learning
