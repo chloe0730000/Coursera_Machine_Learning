@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg950\cocoartf1671
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #\'97\'97\'97 Density based clustering methods\
+features:\
+	1. Discover clusters of arbitrary shape\
+	2. handle noise\
+	3. One scan (only examine the local region to justify density)\
+	3. need density parameters as termination condition\
+\
+# Methods\
+	1. DBSCAN (Density-based spatial clustering of Application with Noise)\
+		- discover clusters of arbitrary shape\
+		- two parameters: \
+			1. Eps: maximum radius of the neighborhood\
+			2. Minpts: minimum number of points in the eps-neighborhood of a point\
+		- How it works\
+			1. Arbitrarily select a point p\
+			2. Retrieve all points density reachable	\
+				- if p is a core point, a cluster is formed\
+				- if p is a border point, no points are density- reachable from p and DBSCAN visits the next point of the dataset\
+			3. Continue the process until all of the points have been processed\
+		- drawback: \
+			1. computation complexity -> n^2, but if use spatial index then efficient\
+			2. sensitive to parameter settings\
+				\
+	2. OPTICS (ordering points to identify clustering structure)\
+		- solve DBSCAN drawback sensitive to parameter setting\
+		- idea: higher density points should be processed first\
+		- How it works\
+			1. determine the Minpts then determine the distance\
+\
+\
+	3. DENCLUE\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 #\'97\'97\'97 Grid based clustering methods\
+	- partition the data space into a finite number of cells to form a grid structure\
+	- features and challenges:\
+		1. efficiency and scalability: # of cells << # of data points\
+		2. hard to handle highly irregular data distribution\
+		3. Locality\
+		4. curse of dimensionality\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+Methods:\
+	1. STING (Statistical information Grid)\
+		- spatial area is divide into rectangular cells at different levels \
+\
+		How it works:\
+			- start at the root and proceed to the next lower level using STING\
+			- calculate the likelihood that a cell is relevant to the query at some confidence level using the statistical information of the cell\
+			- only children of likely relevant cells are recursively explored\
+			- repeat this process until the bottom layer is reached\
+		\
+		Advantages:\
+			1. query independent, easy to parallelize, incremental update\
+			2. efficiency\
+	\
+		Disadvantages:\
+			loss accuracy in lower level for query process\
+\
+	2. CLIQUE (Clustering in QUEst)\
+		- Density based and Grid based subspace clustering\
+\
+		How it works:\
+			1. partition the data space and find number of points that lie inside each cell of the partition\
+			2. identify the subspace that contain clusters using priori principle\
+\
+		Advantages:\
+			1. find subspaces of the highest dimensionality \
+			2. insensitive to the order of records in input\
+			3. scales linearly with the size of input\
+\
+		Disadvantages:\
+			1. quality of results depend on: number and width of the partitions and grid cells\
+\
+\
+\
+\
+}
