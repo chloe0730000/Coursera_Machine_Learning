@@ -6,3 +6,4 @@
 	* How Google does Machine Learning
 	* Neural Networks and Deep Learning
 	* Linux for Developers
+	* SQL_for_Data_Science
