@@ -7,3 +7,4 @@
 	* Neural Networks and Deep Learning
 	* Linux for Developers
 	* SQL_for_Data_Science
+	* Introduction to Trading, Machine Learning and GCP
