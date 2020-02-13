@@ -20,3 +20,16 @@
 
 
 ## Course_2
+
+* Need to run those script with GCP credential cannot run on local
+* data: https://github.com/GoogleCloudPlatform/training-data-analyst ->  training-data-analyst > courses > ai-for-finance > solution > aapl_regression_scikit_learn.ipynb
+
+
+## Course_3 Time series
+
+* How to convert a trendy data to stationary data? Difference it or De-Mean it.
+* Stationary: the statistical structure of the series is independent of time
+* AR (Auto Regressive): goal is to find the correct time lag that best captures the order of such an AR process. this is not a one step procedure but is an iterative process
+* MA (Moving Average): don't take previous y values as inputs, but rather take the previous error terms (actual - predicted y values based on MA model)
+* ARIMA: (1,2,3) meaning one lagged data value (AR), 3 lagged error terms (MA) and is differenced twice (I: integrated or stationary)
+* ARIMA (p,d,q) -> high p: market has high memory; low p: the past has the low impact for the future; if p and q are zero your model is random walk
