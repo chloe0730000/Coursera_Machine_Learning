@@ -8,3 +8,4 @@
 	* Linux for Developers
 	* SQL_for_Data_Science
 	* Introduction to Trading, Machine Learning and GCP
+	* Using Machine Learning in Trading and Finance
